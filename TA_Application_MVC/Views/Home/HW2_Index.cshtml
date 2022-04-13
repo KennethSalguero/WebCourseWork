@@ -1,0 +1,155 @@
+﻿<!--
+  Author:    Kenneth Salguero u1021533
+  Partner:   None
+  Date:      9/12/2021
+  Course:    CS 4540, University of Utah, School of Computing
+  Copyright: CS 4540 and Kenneth Salguero - This work may not be copied for use in Academic Coursework.
+
+  I, Kenneth Salguero, certify that I wrote this code from scratch and did not copy it in part or whole from
+  another source.  Any references used in the completion of the assignment are cited in my README file.
+
+  File Contents
+
+     The HTML file for the landing page of the for the application, It contains the information of a submitted
+     application as well as academic information about the student.
+-->
+@{
+    ViewData["Title"] = "ApplicationInfo";
+}
+
+
+<!--Name, uID, contact info, interested classes, time availablity and resume, Which is all Information the user has put in.-->
+<h1>Application Info</h1>
+
+<form>
+    <div id="IDInformation" class="form-row">
+        <div class="form-group col-md-6">
+            <label for="InputName">Name</label>
+            <input type="text" placeholder="Jake Jacobson" class="form-control" id="InputName" readonly>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="InputuID">uID</label>
+            <input type="text" placeholder="u1234567" class="form-control" id="InputuID" readonly>
+        </div>
+    </div>
+    <div id="Contact information" class="form-row">
+        <div class="form-group col-md-6">
+            <label for="InputPhone">Phone Number</label>
+            <input type="tel" placeholder="801-555-5555" class="form-control" id="inputPhone" readonly>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="InputEmail">Email</label>
+            <input type="email" placeholder="u1234567@utah.edu" class="form-control" id="InputEmail" readonly>
+        </div>
+    </div>
+
+
+    <div id="ClassLevel" class="form-row">
+
+        <div class="form-group col-md-3">
+            <label for="inputClass">Class Level</label>
+            <input type="email" placeholder="Junior" class="form-control" id="InputEmail" readonly>
+        </div>
+
+
+    </div>
+
+    <div id="Interested Class" class="form-group">
+
+        <label for="inputClass">Class interested in:</label>
+
+        <div class="form-row">
+            <div class="col-2">
+                <label><input type="checkbox" disabled="disabled" checked="checked" value=""> CS 1010</label>
+            </div>
+            <div class="col-2">
+                <label><input type="checkbox" disabled="disabled" checked="checked" value=""> CS 1400</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-2">
+                <label><input type="checkbox" disabled="disabled" value=""> CS 2420</label>
+
+            </div>
+            <div class="col-2">
+                <label><input type="checkbox" disabled="disabled" value=""> CS 3500</label>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-2">
+                <label><input type="checkbox" disabled="disabled" value=""> CS 3505</label>
+            </div>
+            <div class="col-2">
+                <label><input type="checkbox" disabled="disabled" value=""> CS 4400</label>
+
+            </div>
+        </div>
+    </div>
+
+    <div div id="TimeEntry" class="form-group">
+        <div class="form-group col-md-6 noleftPadding">
+            <label for="inputClass">Available Hours:</label>
+            <table class="table ">
+                <tr>
+                    <th>MO</th>
+                    <th>TU</th>
+                    <th>WE</th>
+                    <th>TH</th>
+                    <th>FRI</th>
+                </tr>
+                <tr>
+                    <td>1:25 - 3:00</td>
+                    <td>1:25 - 5:00</td>
+                    <td>1:25 - 3:00</td>
+                    <td>1:25 - 5:00</td>
+                    <td>1:25 - 5:00</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div id="PersonalStatement" class="form-group">
+        <div class="noleftPadding col-6">
+            <label class="InputPersonalStatement" for="textAreaExample">Personal Statement</label>
+            <textarea class="form-control" id="textAreaExample" rows="7" placeholder="I have a lot of experience tutoring and have done it before." readonly></textarea>
+
+        </div>
+    </div>
+
+    <form>
+        <div id="ResumeLink" class="form-group ">
+            <label for="InputResume">Resume: </label>
+            <a href="~/Home/StudentApplication">StudentResume</a>
+        </div>
+    </form>
+    <a class="btn btn-danger btn-lg" href="~/Applications/Edit" data-toggle="tooltip" title="The Professors will be notified of any changes" role="button">Edit »</a>
+</form>
+
+<!--Information that will be retrieved based on uID Students will not see this.-->
+<form>
+    <h2>Student Academic Information</h2>
+
+    <div id="Academic information" class="form-row">
+        <div class="form-group col-md-6">
+            <label for="InputName">GPA</label>
+            <input type="text" placeholder="3.8" class="form-control-plaintext" id="GPA" readonly>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="CreditHours">Earned Credit Hours</label>
+            <input type="text" placeholder="72" class="form-control-plaintext" id="CreditHours" readonly>
+        </div>
+    </div>
+    <div id="Academic information" class="form-row">
+        <div class="form-group col-md-6">
+            <label for="HasTAed">Has TAed?</label>
+            <input type="text" placeholder="No" class="form-control-plaintext" id="HasTAed" readonly>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="Major">Major</label>
+            <input type="email" placeholder="Computer Science" class="form-control-plaintext" id="Major" readonly>
+        </div>
+    </div>
+
+</form>
+

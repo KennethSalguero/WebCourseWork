@@ -1,0 +1,116 @@
+﻿<!--
+      Author:    Kenneth Salguero u1021533
+      Partner:   None
+      Date:      10/25/2021
+      Course:    CS 4540, University of Utah, School of Computing
+      Copyright: CS 4540 and Kenneth Salguero - This work may not be copied for use in Academic Coursework.
+
+      I, Kenneth Salguero, certify that I wrote this code from scratch and did not copy it in part or whole from
+      another source.  Any references used in the completion of the assignment are cited in my README file.
+
+      File Contents        
+         A detailed view of the courses, accessible to everyone although only the admin can edit.
+-->
+
+@model TA_Application_MVC.Models.Course
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Course</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CourseTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CourseNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CourseNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Section)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Section)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProfessorUnid)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProfessorUnid)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProfessorName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProfessorName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeAndDateOffered)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TimeAndDateOffered)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CreditHours)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CreditHours)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Enrollment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Enrollment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CourseID">Edit</a> |
+    <a asp-action="List">Back to List</a>
+</div>

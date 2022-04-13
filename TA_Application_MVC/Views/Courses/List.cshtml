@@ -1,0 +1,83 @@
+﻿<!--
+      Author:    Kenneth Salguero u1021533
+      Partner:   None
+      Date:      10/25/2021
+      Course:    CS 4540, University of Utah, School of Computing
+      Copyright: CS 4540 and Kenneth Salguero - This work may not be copied for use in Academic Coursework.
+
+      I, Kenneth Salguero, certify that I wrote this code from scratch and did not copy it in part or whole from
+      another source.  Any references used in the completion of the assignment are cited in my README file.
+
+      File Contents
+         A detailed view of all the available course, the admin can edit notes on this page.
+-->
+
+@model IEnumerable<TA_Application_MVC.Models.Course>
+
+@inject Microsoft.AspNetCore.Identity.SignInManager<TA_Application_MVC.Areas.Identity.Data.TAUser> signInManager;
+@{
+    ViewData["Title"] = "List";
+}
+
+<div id="PlaceHolderHere"></div>
+
+<h1>Course List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Course
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Section)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Semester)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            @if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Note)
+                </th>
+            }
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>
+                    <a asp-action="View" asp-route-id="@item.CourseID">@Html.DisplayFor(modelItem => item.Department)  @Html.DisplayFor(modelItem => item.CourseNumber)</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Section)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Semester)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year)
+                </td>
+
+                @if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Note) |
+                        <button type="button" class="btn btn-primary" data-toggle="ajax-modal" data-target="#EditNote" data-url="@Url.Action("EditNote", new {id = item.CourseID })">Edit Note</button>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+

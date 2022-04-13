@@ -1,0 +1,309 @@
+﻿/**
+ * Author:    Kenneth Salguero u1021533
+ * Partner:   None
+ * Date:      9/05/2021
+ * Course:    CS 4540, University of Utah, School of Computing
+ * Copyright: CS 4540 and [Your Name(s)] - This work may not be copied for use in Academic Coursework.
+ *
+ * I, Kenneth Salguero, certify that I wrote this code from scratch and did 
+ * not copy it in part or whole from another source.  Any references used 
+ * in the completion of the assignment are cited in my README file and in
+ * the appropriate method header.
+ *
+ * File Contents
+ *
+ *    The site CSS file, contains all the CSS on the website.
+ */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/*
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.navbar-custom {
+    background-color: #372c2c; /*Navbar custom color*/
+}
+/* Modify brand and text color */
+
+/*
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: white;
+}
+*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* Home page  
+---------------------------------------- */
+
+
+.centText {  
+    position: relative;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000, -3px 0 0 #000;
+    font-size: 75px;
+    
+}
+
+.cent {
+    padding-bottom: 25px;
+    position: relative;
+    text-align: center;
+    font-size: 75px;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Background image for landing page*/
+.box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background-image: url(../Images/Tutoring1.jpg);
+    padding: 200px;
+    margin: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* CourceList page CSS
+------------------------------------------------- */
+/* Split the screen in half */
+/* the following algorithm was posted/written/etc by w3 schools and came from https://www.w3schools.com/howto/howto_css_split_screen.asp   */
+.split {
+    
+    height: 75%;
+    width: 50%;
+    position: fixed;
+    z-index: 1; 
+    overflow-x: hidden;
+    padding-top: 25px;
+    padding-inline: 25px;
+ 
+}
+.left {
+    left: 0;
+    overflow-y: scroll;
+ 
+}
+.right {
+    right: 0;
+    overflow-y: scroll;
+    animation: fadeIn 3.5s;
+}
+
+
+/*Courses Table Items*/
+/* the following algorithm was posted/written/etc by w3 schools and came from https://www.w3schools.com/css/css_table.asp */
+#Courses {
+    overlfow-y auto;
+    font-family: Arial;
+    border-collapse: collapse;
+    width: 100%;
+    animation: fadeIn 2.5s;
+}
+#Courses td, #Courses th {
+    border: 3px solid #808080;
+    padding: 12px;
+}
+#Courses th {
+    position: sticky;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #372c2c;
+    color: white; /*Since we made the top row red*/
+}
+#Courses tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#Courses tr:hover {
+    background-color: #ddd;
+}
+
+/*Applicants table*/
+#Applicants {
+    font-family: Arial;
+    border-collapse: collapse;
+    width: 80%;
+    animation: fadeIn 4s;
+}
+#Applicants td, #Courses th {
+    border: 3px solid #808080;
+    text-align: center;
+    padding: 12px;
+}
+#Applicants th {
+    position: sticky;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: white;
+    color: black; 
+}
+#Applicants tr:nth-child(even) {
+    text-align: center;
+    background-color: #f2f2f2;
+}
+#Applicants tr:hover {
+    background-color: #ddd;
+}
+
+a.button {
+    /*Button meant to be place on table to increase clicking space*/
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    text-decoration: underline;
+    color: #0645AD;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*
+    Applications Index
+*/
+.noleftPadding {
+    padding: 0px;
+}
+
+
+.btn-xl {
+    
+   
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 360px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.highcharts-data-table th {
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+.highcharts-data-table td,
+.highcharts-data-table th,
+.highcharts-data-table caption {
+    padding: 0.5em;
+}
+
+.highcharts-data-table thead tr,
+.highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+
+
+
+
+

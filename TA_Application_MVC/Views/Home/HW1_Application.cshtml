@@ -1,0 +1,128 @@
+﻿<!--
+    Author:    Kenneth Salguero u1021533
+    Partner:   None
+    Date:      9/05.2021
+    Course:    CS 4540, University of Utah, School of Computing
+    Copyright: CS 4540 and Kenneth Salguero - This work may not be copied for use in Academic Coursework.
+
+    I, Kenneth Salguero, certify that I wrote this code from scratch and did not copy it in part or whole from
+    another source.  Any references used in the completion of the assignment are cited in my README file.
+
+    File Contents
+
+        The applicants page for the website. Shows information about all current applicants.
+-->
+
+    @{
+        ViewData["Title"] = "Applicants";
+    }
+
+
+    <div class="text-center">
+        <h1 class="display-4">Applicants</h1>
+    </div>
+
+    <!--Left Side holds a table of all applicants-->
+    <div class="split left">
+        <table id="Courses">
+            <tr>
+                <th>Name</th>
+                <th>Has TAed Before?</th>
+                <th>Classes Applied</th>
+                <th>Status</th>
+                <th>GPA</th>
+            </tr>
+            <tr>
+                <td><a href="#" class="button">Edward Almond</a></td>
+                <td>Yes</td>
+                <td>CS 1410</td>
+                <td>Hired</td>
+                <td>3.8</td>
+
+            </tr>
+            <tr>
+                <td><a href="#" class="button">Orlando Ward</a></td>
+                <td>Yes</td>
+                <td>CS 1410<br>CS 1010</td>
+                <td>Hired</td>
+                <td>4.0</td>
+
+            </tr>
+            <tr>
+                <td><a href="#" class="button">Jacob Stevens</a></td>
+                <td>Yes</td>
+                <td>CS 1410</td>
+                <td>Hired</td>
+                <td>3.6</td>
+
+            </tr>
+            <tr>
+                <td><a href="#" class="button">Don Pratt</a></td>
+                <td>Yes</td>
+                <td>CS 1410</td>
+                <td>Hired</td>
+                <td>3.8</td>
+
+            </tr>
+            <tr>
+                <td><a href="#" class="button">Oscar Griswold</a></td>
+                <td>No</td>
+                <td>CS 1410</td>
+                <td>Under Consideration</td>
+                <td>3.8</td>
+
+            </tr>
+            <tr>
+                <td><a href="#" class="button">Paul Newgarden</a></td>
+                <td>No</td>
+                <td>CS 1410</td>
+                <td>Under Consideration</td>
+                <td>3.1</td>
+
+            </tr>
+            <tr>
+                <td><a href="#" class="button">Lucian Truscott</a></td>
+                <td>No</td>
+                <td>CS 1410</td>
+                <td>Under Consideration</td>
+                <td>3.1</td>
+            </tr>
+
+
+        </table>
+    </div>
+
+    <!--Right side holds information about a selected applicant-->
+    <div class="split right">
+        <div id="TA's Information'">
+            <h1 id="TA's Name">Orlando Ward</h1>
+            <p>
+                <a href="/Home/Application" class="button">Resume</a>
+                <br>Has TAed Before?: Yes
+                <br>TA History: CS 1400, CS 1010
+                <br>GPA: 4.0
+                <br>Has Applied for: CS 1410, CS 1010
+
+
+            </p>
+
+            <!--The students availability-->
+            <table id="Applicants">
+                <tr>
+                    <th>MO</th>
+                    <th>TU</th>
+                    <th>WE</th>
+                    <th>TH</th>
+                    <th>FRI</th>
+                </tr>
+                <tr>
+                    <td>1:25 - 9:00</td>
+                    <td>1:25 - 9:00</td>
+                    <td>1:25 - 9:00</td>
+                    <td>1:25 - 9:00</td>
+                    <td>1:25 - 9:00</td>
+                </tr>
+
+            </table>
+        </div>
+    </div>

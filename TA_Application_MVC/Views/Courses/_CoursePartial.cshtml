@@ -1,0 +1,63 @@
+﻿<!--
+      Author:    Kenneth Salguero u1021533
+      Partner:   None
+      Date:      10/25/2021
+      Course:    CS 4540, University of Utah, School of Computing
+      Copyright: CS 4540 and Kenneth Salguero - This work may not be copied for use in Academic Coursework.
+
+      I, Kenneth Salguero, certify that I wrote this code from scratch and did not copy it in part or whole from
+      another source.  Any references used in the completion of the assignment are cited in my README file.
+
+      File Contents
+         This class was made with the help of this video https://www.youtube.com/watch?v=aKrzBR32pKk
+         a partial view form so that the admin can update their notes for classes.
+-->
+
+
+@model Course
+
+<div class="modal fade" id="EditNote">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="editNoteLable">Edit Note</h4>
+
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>x</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <form action="EditNote">
+                    <div class="form-group">
+                        <label asp-for="Note"></label>
+                        <input type="hidden" asp-for="CourseID" />
+                        <input type="hidden" asp-for="Semester" />
+                        <input type="hidden" asp-for="Year" />
+                        <input type="hidden" asp-for="CourseTitle" />
+                        <input type="hidden" asp-for="Department" />
+                        <input type="hidden" asp-for="CourseNumber" />
+                        <input type="hidden" asp-for="Section" />
+                        <input type="hidden" asp-for="Description" />
+                        <input type="hidden" asp-for="ProfessorUnid" />
+                        <input type="hidden" asp-for="ProfessorName" />
+                        <input type="hidden" asp-for="TimeAndDateOffered" />
+                        <input type="hidden" asp-for="Location" />
+                        <input type="hidden" asp-for="CreditHours" />
+                        <input type="hidden" asp-for="Enrollment" />
+                        <input asp-for="Note" class="form-control" />
+                        <span asp-validation-for="Note" class="text-danger"></span>
+                    </div>
+
+
+                </form>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-save="modal" data-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

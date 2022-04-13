@@ -1,0 +1,69 @@
+﻿<!--
+      Author:    Kenneth Salguero u1021533
+      Partner:   None
+      Date:      10/15/2021
+      Course:    CS 4540, University of Utah, School of Computing
+      Copyright: CS 4540 and Kenneth Salguero - This work may not be copied for use in Academic Coursework.
+
+      I, Kenneth Salguero, certify that I wrote this code from scratch and did not copy it in part or whole from
+      another source.  Any references used in the completion of the assignment are cited in my README file.
+
+      File Contents
+
+         This class is the view for the admin, it allow the admin to reassign role to all users.
+-->
+
+@model List<AdminViewModel>
+@inject Microsoft.AspNetCore.Identity.RoleManager<Microsoft.AspNetCore.Identity.IdentityRole> roleManager
+
+@{
+    ViewBag.Title = "Admin";
+
+
+}
+
+<form asp-action="OnCheckBoxClick" asp-controller="Administrator" id="AdminForm" method="POST" data-ajax="true">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">UnID</th>
+                @foreach (var r in roleManager.Roles)
+                {
+                    <th scope="col">@r</th>
+                }
+
+            </tr>
+        </thead>
+        @if (Model.Any()) // Print all the users in the role
+        {
+
+            for (int i = 0; i < Model.Count; i++)
+            {
+
+                <tr>
+                    <th>@Model[i].Name</th>
+                    <th>@Model[i].unID</th>
+
+                    @foreach (var r in roleManager.Roles)
+                    {
+                        <th>
+                            <div class="form-check m-1">
+                                <input type="hidden" asp-for="@Model[i].Id" />
+                                <input type="hidden" asp-for="@Model[i].Name" />
+                                <input onchange="checkClick()" asp-for="@Model[i].Roles[r.ToString()]" class="form-check-input" />
+                            </div>
+                        </th>
+
+                        }
+                </tr>
+            }
+        }
+    </table>
+</form>
+
+<script>
+    function checkClick() {
+        $('#AdminForm').trigger('submit')
+    }
+</script>

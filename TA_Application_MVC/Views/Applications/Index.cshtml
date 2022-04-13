@@ -1,0 +1,92 @@
+﻿<!--
+      Author:    Kenneth Salguero u1021533
+      Partner:   None
+      Date:      9/28/2021
+      Course:    CS 4540, University of Utah, School of Computing
+      Copyright: CS 4540 and Kenneth Salguero - This work may not be copied for use in Academic Coursework.
+
+      I, Kenneth Salguero, certify that I wrote this code from scratch and did not copy it in part or whole from
+      another source.  Any references used in the completion of the assignment are cited in my README file.
+
+      File Contents
+
+         The index page list the number of applicants, the overall gpa and a link to the List page.
+-->
+@model IEnumerable<TA_Application_MVC.Models.Application>
+@inject Microsoft.AspNetCore.Identity.SignInManager<TA_Application_MVC.Areas.Identity.Data.TAUser> signInManager;
+@{
+    ViewData["Title"] = "Index";
+    bool applicationCompleted = false;
+}
+
+
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+{
+    <div class="cent">
+
+        <h1>Applications Overview</h1>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 text-center">
+            <h3>Total Applicants</h3>
+            <a class="btn-lg btn-danger btn-block " href="~/Applications/List" role="button">@Html.DisplayName(Model.Count().ToString())</a>
+        </div>
+
+        <div class="col-lg-4 text-center">
+            <h3>Average GPA</h3>
+            <a class="btn-lg btn-danger btn-block " href="~/Applications/List" role="button">@String.Format("{0:0.00}", (Model.Sum(model => model.GPA) / Model.Count()))</a>
+        </div>
+
+        <div class="col-lg-4 text-center">
+            <h3>Applicants</h3>
+            <a class="btn-lg btn-danger btn-block " href="~/Applications/List" role="button">Go to Applicants</a>
+        </div>
+
+
+
+    </div>
+}
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Professor"))
+{
+    <div class="cent">
+
+        <h1>Applications Overview</h1>
+        <h2>You don't belong here!</h2>
+        <h4>This page is for students and admins!</h4>
+
+    </div>
+}
+@if (signInManager.IsSignedIn(User) && User.IsInRole("Applicant"))
+{
+    @foreach (var item in Model)
+    {
+        @if (item.FirstMidName == User.Identity.Name || item.LastName == User.Identity.Name)
+        {
+            applicationCompleted = true;
+            <div>
+                <h1>You have already completed an application!!!</h1>
+                <a asp-action="Details" asp-route-id="@item.ID">Edit your application</a>
+            </div>
+            break;
+        }
+
+    }
+    @if (!applicationCompleted)
+    {
+        <div>
+            <h1>You need to complete an application</h1>
+            <a href="~/Applications/Create" role="button">Apply Today!</a>
+        </div>
+    }
+
+
+}
+@if(!signInManager.IsSignedIn(User))
+{
+    <div>
+        <h1>You should Sign up and Apply Today!</h1>
+        <a href="~/Applications/Create" role="button">Apply Today!</a>
+    </div>
+}

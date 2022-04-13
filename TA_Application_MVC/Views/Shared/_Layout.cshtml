@@ -1,0 +1,83 @@
+﻿@inject Microsoft.AspNetCore.Identity.SignInManager<TA_Application_MVC.Areas.Identity.Data.TAUser> signInManager;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Kenneth Salguero U1021533" />
+    <meta name="description" content="A website that helps Instructors manage Teaching Assistants." />
+    <meta name="keywords" content="TA, Teaching Assistants, Eduction, Computer Science, Student Jobs" />
+
+
+    <title>@ViewData["Title"] - TAApplication</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Home.css" />
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-custom navbar-light navbar-expand-sm navbar-toggleable-sm  border-bottom box-shadow mb-3">
+
+            <div class="container">
+                <div class="dropdown">
+                    <button class="btn btn-default btn-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        TA Application ▼
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="">Kenneth Salguero</a>
+                        <a class="dropdown-item" href="~/Availabilities">AvailabilityTracker</a>                      
+                    </div>
+
+                </div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-ex panded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="EnrollmentTrends">Enrollments</a>
+                        </li>
+
+                        @if (signInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="Admin">Admin</a>
+                            </li>
+                        }
+                    </ul>
+
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - TAApplication - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
+    
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

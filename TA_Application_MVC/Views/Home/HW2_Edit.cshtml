@@ -1,0 +1,205 @@
+﻿<!--
+  Author:    Kenneth Salguero u1021533
+  Partner:   None
+  Date:      9/12/2021
+  Course:    CS 4540, University of Utah, School of Computing
+  Copyright: CS 4540 and Kenneth Salguero - This work may not be copied for use in Academic Coursework.
+
+  I, Kenneth Salguero, certify that I wrote this code from scratch and did not copy it in part or whole from
+  another source.  Any references used in the completion of the assignment are cited in my README file.
+
+  File Contents
+
+     The HTML file for the application, it takes information about the students and their availability.
+-->
+@{
+    ViewData["Title"] = "JobRequestForm";
+}
+
+<h2>Please Fill out the Application:</h2>
+
+<form>
+    <div id="IDInformation" class="form-row">
+        <div class="form-group col-md-6">
+            <label for="InputName">Name</label>
+            <input type="text" class="form-control" id="InputName">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="InputuID">uID</label>
+            <input type="text" class="form-control" id="InputuID">
+        </div>
+    </div>
+    <div id="Contact information" class="form-row">
+        <div class="form-group col-md-6">
+            <label for="InputPhone">Phone Number</label>
+            <input type="tel" class="form-control" id="inputPhone">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="InputEmail">Email</label>
+            <input type="email" class="form-control" id="InputEmail">
+        </div>
+    </div>
+
+
+    <div id="ClassLevel" class="form-row">
+
+        <div class="form-group col-md-3">
+            <label for="inputClass">Class Level</label>
+            <select id="inputClass" class="form-control">
+                <option selected>Choose...</option>
+                <option>Freshman</option>
+                <option>Softmore</option>
+                <option>Junior</option>
+                <option>Senior</option>
+                <option>Graduate</option>
+            </select>
+        </div>
+
+
+    </div>
+
+    <div id="Interested Class" class="form-group">
+
+        <label for="inputClass">Select class your are interested in:</label>
+
+        <div class="form-row">
+            <div class="col-2">
+                <label><input type="checkbox" value=""> CS 1010</label>
+            </div>
+            <div class="col-2">
+                <label><input type="checkbox" value=""> CS 1400</label>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-2">
+                <label><input type="checkbox" value=""> CS 2420</label>
+
+            </div>
+            <div class="col-2">
+                <label><input type="checkbox" value=""> CS 3500</label>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-2">
+                <label><input type="checkbox" value=""> CS 3505</label>
+            </div>
+            <div class="col-2">
+                <label><input type="checkbox" value=""> CS 4400</label>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="TimeEntry" class="form-group">
+        <div class="form-group col-md-6 noleftPadding">
+            <label for="inputClass">Please Enter available hours:</label>
+            <table class="table ">
+                <tr>
+                    <th>Time</th>
+                    <th>MO</th>
+                    <th>TU</th>
+                    <th>WE</th>
+                    <th>TH</th>
+                    <th>FR</th>
+                </tr>
+
+                <tr>
+                    <td>9:00</td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                </tr>
+                <tr>
+                    <td>10:00</td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+
+                </tr>
+                <tr>
+                    <td>11:00</td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+
+                </tr>
+                <tr>
+                    <td>12:00</td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+
+                </tr>
+                <tr>
+                    <td>1:00</td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+
+                </tr>
+                <tr>
+                    <td>2:00</td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                </tr>
+                <tr>
+                    <td>3:00</td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                </tr>
+                <tr>
+                    <td>4:00</td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                </tr>
+                <tr>
+                    <td>5:00</td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                    <td><input type="checkbox" name=""></td>
+                </tr>
+
+
+            </table>
+        </div>
+
+    </div>
+
+    <div id="PersonalStatement" class="form-group">
+        <div class="noleftPadding col-6">
+            <label class="InputPersonalStatement" for="textAreaExample">Personal Statement</label>
+            <textarea class="form-control" id="textAreaExample" rows="7" placeholder="Tell us about yourself"></textarea>
+
+        </div>
+    </div>
+
+    <form>
+        <div id="Resume Upload" class="form-group ">
+            <label for="InputResume">Resume</label>
+            <input type="file" class="form-control-file" id="InputResume">
+        </div>
+    </form>
+    <button type="submit" class="btn btn-danger">Submit</button>
+</form>

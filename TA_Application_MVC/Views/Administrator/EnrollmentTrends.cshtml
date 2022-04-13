@@ -1,0 +1,40 @@
+﻿@model IEnumerable<TA_Application_MVC.Models.Course>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Enrollment Trends</h1>
+
+
+
+
+    <label>Start date: </label>
+    <input type="date" id="start" name="trip-start"
+           value="2021-11-01"
+           min="2021-11-01" max="2021-11-30" onchange='dateSelect();'>
+
+
+
+    <select class="form-select" id="ClassSelected" onchange='selectClass("ClassSelected");'>
+
+        @{ foreach (Course c in Model)
+            {
+                <option value="@c.CourseNumber">@c.Department @c.CourseNumber</option>
+            }
+        }
+    </select>
+
+
+    <button type="submit" class="btn btn-info" onclick='getData();' value="Submit">GetData</button>
+
+
+
+<figure class="highcharts-figure">
+    <div id="chart"></div>
+</figure>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.3.2/highcharts.js"></script>
+<script src="~/js/admin/HighChartDisplay.js"></script>
+
